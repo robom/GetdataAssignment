@@ -36,8 +36,6 @@ data <- data[,indices]
 activity_names <- read.table("activity_labels.txt")
 data$activity <- factor(data$activity)
 levels(data$activity) <- activity_names[,2]
-#data <- merge(data, activity_names, by.x = "activity_id", by.y = "v1", all = TRUE)
-#data$activity_id <- NULL
 
 # Use appropriate column names
 colnames(data) <- c("subject_id", as.character(column_names), "activity")
