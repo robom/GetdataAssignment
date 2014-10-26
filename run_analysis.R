@@ -25,7 +25,7 @@ data <- rbind(train, test)
 # Subsets the data so that only mean and std are selected
 # together with activity and subject
 feature_names <- read.table("features.txt")
-indices <- grep("mean()|std()",feature_names[,2])
+indices <- grep("mean\\(\\)|std\\(\\)",feature_names[,2])
 
 column_names <- feature_names[indices, 2]
 

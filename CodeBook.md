@@ -1,17 +1,12 @@
-Title
+Code Book
 ========================================================
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
+The tidy data set consists of the merged data from `X_tran.txt` and `X_test.txt`. It has 180 rows and 68 columns.
 
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The description of all the columns follows:
 
-```{r}
-summary(cars)
-```
+1: `subject_id` - Identification of the subjects performing the activities, originally present in separate files `subject_train.txt` and `subject_test.txt`. Each subject performed all the activities. 
 
-You can also embed plots, for example:
+2: `activity` - The labelled activity that the subject was performing. It can have one of the following values: `WALKING`, `WALKING_UPSTAIRS`, `WALKING_DOWNSTAIRS`, `SITTING`, `STANDING`, and `LAYING`. The activities (their IDs) were originally in separate files `y_train.txt` and `y_test.txt`. The mapping between the IDs and the names of the activities was in the file `activity_labels.txt`. There is one row with each activity for each subject.
 
-```{r fig.width=7, fig.height=6}
-plot(cars)
-```
-
+3-68: These columns contain *averaged* values of measurements from the columns 1:6, 41:46, 81:86, 121:126, 161:166, 201, 202, 214, 215, 227, 228, 240, 241, 253, 254, 266:271, 294:296, 345:350, 424:429, 452:454, 503, 504, 516, 517, 529, 530, 542, 543, 563 of the original data set. These columns (of the original data set) concerned the mean and standard deviation of the measurements. The average is computed for each `(subject_id, activity)` pair. The names of the columns are assgined based on the file `features.txt`.
